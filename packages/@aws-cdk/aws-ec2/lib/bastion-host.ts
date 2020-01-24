@@ -7,6 +7,7 @@ import { IPeer } from "./peer";
 import { Port } from "./port";
 import { ISecurityGroup } from "./security-group";
 import { IVpc, SubnetSelection, SubnetType } from "./vpc";
+import { IMachineImage } from "./machine-image";
 
 /**
  * Properties of the bastion host
@@ -56,6 +57,12 @@ export interface BastionHostLinuxProps {
    */
   readonly instanceType?: InstanceType;
 
+  /**
+   * The machine image to use
+   *
+   * @default - An Amazon Linux 2 image which is kept up-to-date automatically.
+   */
+  readonly machineImage?: IMachineImage;
 }
 
 /**
